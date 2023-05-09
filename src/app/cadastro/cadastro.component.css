@@ -1,0 +1,33 @@
+.btn.btn-primary:not(.highlight-card) {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn.btn-primary:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-primary:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.btn.btn-warning.float-right:not(.highlight-card) {
+  cursor: pointer;
+}
+
+.btn.btn-warning.float-right:not(.highlight-card):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.btn.btn-warning.float-right:not(.highlight-card):hover .material-icons path {
+  fill: rgb(105, 103, 103);
+}
+
+.form-group.btn {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+
+}

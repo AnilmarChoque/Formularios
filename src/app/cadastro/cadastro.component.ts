@@ -1,6 +1,6 @@
 import { group } from '@angular/animations';
 import { Component, OnInit} from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,12 +14,12 @@ export class CadastroComponent {
 
   constructor(private builder : FormBuilder){
     this.cadastroForm = builder.group({
-      nome: [''],
-      usuario: [''],
-      email: [''],
-      senha: [''],
-      confirmaSenha: [''],
-      aceite: [false]
+      nome: ['', [Validators.required]],
+      usuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      email: ['', [Validators.required, Validators.email]],
+      senha: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]],
+      confirmaSenha: ['', [Validators.required]],
+      aceite: [false, [Validators.requiredTrue]]
     })
   }
 

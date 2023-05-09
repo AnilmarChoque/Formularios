@@ -5,21 +5,25 @@
     <div class="form-group">
       <label>Nome</label>
       <input type="text" class="form-control" formControlName="nome"/>
+
     </div>
 
     <div class="form-group">
       <label>Usuário</label>
       <input type="text" class="form-control" formControlName="usuario"/>
+
     </div>
 
     <div class="form-group">
       <label>E-mail</label>
       <input type="email" class="form-control" formControlName="email"/>
+
     </div>
 
     <div class="form-group">
       <label>Senha</label>
-      <input class="form-control" formControlName="senha"/>
+      <input type="password" class="form-control" formControlName="senha"/>
+
     </div>
 
     <div class="form-group">
@@ -30,10 +34,11 @@
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" formControlName="aceite"/>
       <label for="aceitaTermos" class="form-check-label">Eu li e concordo com os Termos</label>
+
     </div>
 
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Registrar</button>
+    <div class="form-group btn">
+      <button type="submit" class="btn btn-primary" [disabled]="cadastroForm.invalid">Registrar</button>
       <button type="button" class="btn btn-warning float-right">Limpar</button>
     </div>
 
