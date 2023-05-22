@@ -16,7 +16,7 @@ export class CadastroComponent {
     this.cadastroForm = builder.group({
       nome: ['', [Validators.required]],
       usuario: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
-      email: ['', [Validators.required, Validators.email]],
+      email:['', [Validators.required, Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)]],
       senha: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(12)]],
       confirmaSenha: ['', [Validators.required]],
       aceite: [false, [Validators.requiredTrue]]
@@ -26,4 +26,6 @@ export class CadastroComponent {
   cadastrar() {
     console.log(this.cadastroForm.value);
   }
+
+
 }

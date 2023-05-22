@@ -2,44 +2,63 @@
 
   <form [formGroup]="cadastroForm" (ngSubmit)="cadastrar()">
 
-    <div class="form-group">
-      <label>Nome</label>
-      <input type="text" class="form-control" formControlName="nome"/>
+    <div class="container col-4">
+      <div class="form-group">
+        <label>Nome</label>
+        <input type="text" class="form-control" formControlName="nome"/>
+        <div class="error" *ngIf="cadastroForm.get('nome')?.errors?.['required'] && cadastroForm.get('nome')?.touched">
+          Nome Obrigatório
+        </div>
+      </div>
 
-    </div>
+      <div class="form-group">
+        <label>Usuário</label>
+        <input type="text" class="form-control" formControlName="usuario"/>
+        <div class="error" *ngIf="cadastroForm.get('usuario')?.errors?.['required'] && cadastroForm.get('usuario')?.touched">
+          Nome de Usuário Obrigatório
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label>Usuário</label>
-      <input type="text" class="form-control" formControlName="usuario"/>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" class="form-control" formControlName="email"/>
+        <div class="error" *ngIf="cadastroForm.get('email')?.errors?.['required'] && cadastroForm.get('email')?.touched">
+          E-mail Obrigatório
+        </div>
+      </div>
 
-    </div>
+      <div class="form-group">
+        <label>Senha</label>
+        <input type="password" class="form-control" formControlName="senha"/>
+        <div class="error" *ngIf="cadastroForm.get('senha')?.errors?.['required'] && cadastroForm.get('senha')?.touched">
+          Senha Obrigatório
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label>E-mail</label>
-      <input type="email" class="form-control" formControlName="email"/>
+      <div class="form-group">
+        <label>Confirmar senha</label>
+        <input type="password" class="form-control" formControlName="confirmaSenha"/>
+        <div class="error" *ngIf="cadastroForm.get('senha')?.errors?.['required'] && cadastroForm.get('senha')?.touched">
+          Campo de Confirmação Obrigatório
+        </div>
+        <div class="error" *ngIf="cadastroForm.get('senha')?.value != cadastroForm.get('confirmaSenha')?.value">
+          Senhas não iguais
+        </div>
+      </div>
 
-    </div>
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" formControlName="aceite"/>
+        <label for="aceitaTermos" class="form-check-label">Eu li e concordo com os Termos</label>
+        <div class="error" *ngIf="cadastroForm.get('aceite')?.errors?.['required'] && cadastroForm.get('aceite')?.touched">
+          Aceite os Termos!
+        </div>
 
-    <div class="form-group">
-      <label>Senha</label>
-      <input type="password" class="form-control" formControlName="senha"/>
+      </div>
 
-    </div>
-
-    <div class="form-group">
-      <label>Confirmar senha</label>
-      <input type="password" class="form-control" formControlName="confirmaSenha"/>
-    </div>
-
-    <div class="form-group form-check">
-      <input type="checkbox" class="form-check-input" formControlName="aceite"/>
-      <label for="aceitaTermos" class="form-check-label">Eu li e concordo com os Termos</label>
-
-    </div>
-
-    <div class="form-group btn">
-      <button type="submit" class="btn btn-primary" [disabled]="cadastroForm.invalid">Registrar</button>
-      <button type="button" class="btn btn-warning float-right">Limpar</button>
+      <div class="form-group btns">
+        <button type="submit" class="btn btn-primary" [disabled]="cadastroForm.invalid">Registrar</button>
+        <button type="reset" class="btn btn-warning float-right">Limpar</button>
+      </div>
     </div>
 
   </form>

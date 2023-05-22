@@ -25,9 +25,16 @@
   fill: rgb(105, 103, 103);
 }
 
-.form-group.btn {
-  display: flex;
+.form-group.btns {
   flex-wrap: wrap;
   margin-top: 16px;
 
+}
+
+.container{
+  margin-top: 250px;
+}
+
+.error{
+  color: rgba(255, 0, 0, 0.7)
 }
